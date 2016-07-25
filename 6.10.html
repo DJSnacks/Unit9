@@ -1,0 +1,61 @@
+<!doctype html>
+
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Account Sign-Up</title>
+</head>
+
+<body>
+
+	<p><label>Name:         
+		<p><input id = "name" type = "text" size = "25"></p>
+		</label></p>
+		
+	<p><label>Email Address:
+		<p><input id = "email" type = "text" size = "25"></p>
+		</label></p>
+		
+	<p><label>*User Name:
+		<p><input id = "user" type = "text" size = "25" onkeyup="allowsubmit()"></p>
+		</label></p>
+		
+	<p><label>*Password:
+		<p><input id = "pw1" type = "password" size = "25" onkeyup="allowsubmit()"></p>
+	</label></p>
+	
+	<p><label>*Confirm Password:
+		<p><input id = "pw2" type = "password" size = "25" onkeyup="allowsubmit()"></p>
+	</label></p>
+
+	</label>
+	</p>
+
+	<button id = "submit" onclick="passcheck()" disabled = disabled>Submit</button>
+
+<script>
+function allowsubmit(){
+var usern = document.getElementById("user").value;
+var pass1 = document.getElementById("pw1").value;
+var pass2 = document.getElementById("pw2").value;
+
+if(usern !== "" && pass1 !== "" && pass2 !== ""){
+	document.getElementById("submit").disabled = false
+	} else {
+	document.getElementById("submit").disabled = true
+	}
+}
+
+function passcheck(){
+var pass1 = document.getElementById("pw1").value;
+var pass2 = document.getElementById("pw2").value;
+if(pass1 === pass2){
+alert("Success: Hypothetical Account Created!")
+} else { 
+alert("Passwords do not match")
+}
+}
+</script>
+</body>
+</html>
+		
